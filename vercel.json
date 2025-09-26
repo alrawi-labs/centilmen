@@ -5,9 +5,7 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/client"
-      }
+      "config": { "distDir": "dist/spa" }
     },
     {
       "src": "dist/server/node-build.mjs",
@@ -21,7 +19,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "dist/client/$1"
+      "dest": "dist/spa/$1"
     }
   ]
 }
