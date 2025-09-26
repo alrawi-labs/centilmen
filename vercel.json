@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "name": "centilmen",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/client"
+      }
+    },
+    {
+      "src": "dist/server/node-build.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/server/node-build.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/client/$1"
+    }
+  ]
+}
