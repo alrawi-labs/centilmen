@@ -1,0 +1,121 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    /* Brand: dark base (#1b1d27) and accent (#9e704f) */
+    --background: 230 18% 13%;
+    --foreground: 0 0% 100%;
+
+    --card: 230 17% 18%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 230 17% 18%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 25 33% 46%; /* #9e704f */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 14% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 14% 22%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 230 14% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 14% 24%;
+    --input: 230 14% 24%;
+    --ring: 25 33% 46%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 230 18% 13%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 25 33% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 14% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 14% 24%;
+    --sidebar-ring: 25 33% 46%;
+  }
+
+  .dark {
+    --background: 230 18% 13%;
+    --foreground: 0 0% 100%;
+
+    --card: 230 17% 18%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 230 17% 18%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 25 33% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 14% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 14% 22%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 230 14% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 14% 24%;
+    --input: 230 14% 24%;
+    --ring: 25 33% 46%;
+
+    --sidebar-background: 230 18% 13%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 25 33% 46%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 14% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 14% 24%;
+    --sidebar-ring: 25 33% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+      Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+/* global.css */
+::-webkit-scrollbar {
+  width: 8px; /* scrollbar genişliği */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9c6f4f; /* senin istediğin renk */
+  border-radius: 4px; /* köşeler yuvarlak olsun */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* arka plan */
+}
+

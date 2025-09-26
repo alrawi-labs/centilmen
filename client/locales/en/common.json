@@ -1,0 +1,102 @@
+{
+  "brand": {"name": "Centilmen"},
+  "nav": {
+    "home": "Home",
+    "styles": "Hair Styles",
+    "explore": "Explore",
+    "auth": "Sign Up / Sign In",
+    "language": "Language",
+    "allModels": "All Models",
+    "appointment": "Book Now"
+  },
+  "hero": {
+    "headline": ["Every Man", "Deserves to Be", "a Gentleman."],
+    "tagline": "Come to Centilmen, become a gentleman.",
+    "cta": "Book an Appointment"
+  },
+  "sections": {
+    "satisfaction": {"title": "Satisfaction Panel", "desc": "We put customer satisfaction first."},
+    "why": {"title": "Why Choose Centilmen?", "desc": "Let’s find the style that fits your face and personality."},
+    "stats": {"customers": "+2000", "experts": "10+", "years": "12", "awards": "15+"},
+    "featured": {"title": "Services / Featured Styles", "desc": "Get inspired by our favorite styles.", "all": "All"},
+    "gallery": {"title": "Gallery: Before / After"},
+    "testimonials": {"title": "Testimonials", "verified": "Verified reviews"},
+    "team": {"title": "Team"},
+    "faq": {"title": "Frequently Asked Questions"}
+  },
+  "satisfaction": {
+    "hygiene": {"title": "Hygiene & Safety", "desc": "Top-notch hygiene standards."},
+    "master": {"title": "Master Touch", "desc": "Experienced barbers."},
+    "personal": {"title": "Personal Style", "desc": "Tailored recommendations."},
+    "quality": {"title": "Quality Guarantee", "desc": "Satisfaction-focused service."}
+  },
+  "why": {
+    "expertise": {"title": "Expertise", "desc": "Experts in trendy and classic cuts"},
+    "quality": {"title": "Quality", "desc": "Premium products and precision"},
+    "trust": {"title": "Trust", "desc": "Hygiene, transparency and consistency"},
+    "experience": {"title": "Experience", "desc": "Comfortable, luxurious salon"}
+  },
+  "hair": {
+    "categories": {
+      "klasik": "Classic Styles",
+      "modern-trendy": "Modern / Trendy",
+      "fade-kisa": "Fade / Short",
+      "ozel-deneysel": "Special / Experimental"
+    },
+    "items": {
+      "klasik-sac-kesimi": "Classic Cut",
+      "side-part": "Side Part",
+      "ivy-league": "Ivy League",
+      "taper-cut": "Taper Cut",
+      "pompadour": "Pompadour",
+      "quiff": "Quiff",
+      "textured-crop": "Textured Crop",
+      "comb-over": "Comb Over",
+      "faux-hawk": "Faux Hawk",
+      "low-fade": "Low Fade",
+      "mid-fade": "Mid Fade",
+      "high-fade": "High Fade",
+      "skin-fade": "Skin Fade",
+      "buzz-cut": "Buzz Cut",
+      "crew-cut": "Crew Cut",
+      "spiky-hair": "Spiky Hair",
+      "undercut": "Undercut",
+      "asimetrik-kesimler": "Asymmetric Cuts"
+    }
+  },
+  "explore": {
+    "kimiz": {
+      "heading": "Who Are We?",
+      "links": {
+        "hakkimizda": "About Us",
+        "ekibimiz": "Our Team",
+        "centil-abi": "Centil abi",
+        "deniz": "Deniz",
+        "ucuncu": "I forgot the third"
+      }
+    },
+    "iletisim": {
+      "heading": "Contact",
+      "links": {
+        "bize-ulasin": "Contact Us",
+        "randevu-alin": "Book Now",
+        "kayit-olun": "Sign Up",
+        "giris-yapin": "Sign In"
+      }
+    },
+    "kaynaklar": {
+      "heading": "Resources",
+      "links": {
+        "sss": "FAQ",
+        "rahatlik-bakim": "Comfort & Care"
+      }
+    }
+  },
+  "footer": {
+    "slogan": "Come to Centilmen, become a gentleman.",
+    "cta": "Book Now",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "All rights reserved."
+  }
+}

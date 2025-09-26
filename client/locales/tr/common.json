@@ -1,0 +1,104 @@
+{
+  "brand": {
+    "name": "Centilmen"
+  },
+  "nav": {
+    "home": "Anasayfa",
+    "styles": "Saç Modelleri",
+    "explore": "Keşfet",
+    "auth": "Kayıt/Giriş",
+    "language": "Dil",
+    "allModels": "Tüm Modeller",
+    "appointment": "Randevu Al"
+  },
+  "hero": {
+    "headline": ["Her Erkek", "Bir Centilmen", "Olmayı Hak Eder."],
+    "tagline": "Centilmen’e gel, Centilmen ol.",
+    "cta": "Hemen Randevu Al"
+  },
+  "sections": {
+    "satisfaction": {"title": "Memnuniyet Paneli", "desc": "Müşteri memnuniyetini her şeyin önünde tutuyoruz."},
+    "why": {"title": "Centilmen’i Neden Seçmelisiniz?", "desc": "Kişisel stilinize ve yüz tipinize en uygun modeli birlikte bulalım."},
+    "stats": {"customers": "+2000", "experts": "10+", "years": "12", "awards": "15+"},
+    "featured": {"title": "Hizmetler / Öne Çıkan Modeller", "desc": "Favori stillerimizden ilham alın.", "all": "Tümü"},
+    "gallery": {"title": "Galeri: Önce / Sonra"},
+    "testimonials": {"title": "Müşteri Yorumları", "verified": "Doğrulanmış yorumlar"},
+    "team": {"title": "Ekip"},
+    "faq": {"title": "Sıkça Sorulan Sorular"}
+  },
+  "satisfaction": {
+    "hygiene": {"title": "Hijyen ve Güven", "desc": "Üst düzey hijyen standartları."},
+    "master": {"title": "Usta Dokunuşu", "desc": "Deneyimli berber kadrosu."},
+    "personal": {"title": "Kişisel Stil", "desc": "Size özel öneriler."},
+    "quality": {"title": "Kalite Garantisi", "desc": "Memnuniyet odaklı hizmet."}
+  },
+  "why": {
+    "expertise": {"title": "Uzmanlık", "desc": "Trend ve klasik kesimlerde uzman ekip"},
+    "quality": {"title": "Kalite", "desc": "Premium ürünler ve titiz işçilik"},
+    "trust": {"title": "Güven", "desc": "Hijyen, şeffaflık ve tutarlılık"},
+    "experience": {"title": "Deneyim", "desc": "Konforlu ve lüks salon atmosferi"}
+  },
+  "hair": {
+    "categories": {
+      "klasik": "Klasik Modeller",
+      "modern-trendy": "Modern / Trendy Modeller",
+      "fade-kisa": "Fade / Kısa Tarz Modeller",
+      "ozel-deneysel": "Özel / Deneysel Modeller"
+    },
+    "items": {
+      "klasik-sac-kesimi": "Klasik Saç Kesimi",
+      "side-part": "Side Part",
+      "ivy-league": "Ivy League",
+      "taper-cut": "Taper Cut",
+      "pompadour": "Pompadour",
+      "quiff": "Quiff",
+      "textured-crop": "Textured Crop",
+      "comb-over": "Comb Over",
+      "faux-hawk": "Faux Hawk",
+      "low-fade": "Low Fade",
+      "mid-fade": "Mid Fade",
+      "high-fade": "High Fade",
+      "skin-fade": "Skin Fade",
+      "buzz-cut": "Buzz Cut",
+      "crew-cut": "Crew Cut",
+      "spiky-hair": "Spiky Hair",
+      "undercut": "Undercut",
+      "asimetrik-kesimler": "Asimetrik Kesimler"
+    }
+  },
+  "explore": {
+    "kimiz": {
+      "heading": "Kimiz?",
+      "links": {
+        "hakkimizda": "Hakkımızda",
+        "ekibimiz": "Ekibimiz",
+        "centil-abi": "Centil abi",
+        "deniz": "Deniz",
+        "ucuncu": "Üçüncüyü unuttum"
+      }
+    },
+    "iletisim": {
+      "heading": "İletişim",
+      "links": {
+        "bize-ulasin": "Bize ulaşın",
+        "randevu-alin": "Randevu alın",
+        "kayit-olun": "kayıt olun",
+        "giris-yapin": "giriş yapın"
+      }
+    },
+    "kaynaklar": {
+      "heading": "Kaynaklar",
+      "links": {
+        "sss": "Sıkça Sorulan Sorular",
+        "rahatlik-bakim": "Rahatlık ve bakım"
+      }
+    }
+  },
+  "footer": {
+    "slogan": "Centilmen’e gel, Centilmen ol.",
+    "cta": "Randevu Al",
+    "privacy": "Gizlilik",
+    "terms": "Koşullar",
+    "rights": "Tüm hakları saklıdır."
+  }
+}
