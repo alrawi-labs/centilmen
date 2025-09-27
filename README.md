@@ -381,4 +381,5 @@ Kartın üzerine geçtiği zaman iki bottun gözükecek:
 - TÜM VERİLERDEN VEYA BELİRLİ VERİLERDEN YEDEK İNDİRİLEBİLİR
 - ileriye dönük kaç gün içerisinde randevular açık olacak
 - Her bir saç modelin veya kesim tipi ayrı bir zaman ayarlansın mı ?
+- Telefon Uygulaması istiyor mu. Google Play'e yayınlanabilir
     

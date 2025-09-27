@@ -93,78 +93,78 @@ export default function Index() {
 
 function Satisfaction() {
   return (
-    <section className="container mx-auto max-w-6xl px-8 py-16">
-      <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/70 p-8 md:p-12 backdrop-blur">
+    <section className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 bg-card/70 p-4 sm:p-6 md:p-8 lg:p-12 backdrop-blur">
         {/* Arka plan blur efektleri */}
         <div className="pointer-events-none absolute inset-0 opacity-70">
-          <div className="absolute -top-28 -left-28 h-96 w-96 rounded-full blur-3xl bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--primary)/0.18),transparent_70%)]" />
-          <div className="absolute -bottom-28 -right-28 h-[28rem] w-[28rem] rounded-full blur-3xl bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--primary)/0.12),transparent_70%)]" />
+          <div className="absolute -top-14 -left-14 sm:-top-28 sm:-left-28 h-48 w-48 sm:h-96 sm:w-96 rounded-full blur-3xl bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--primary)/0.18),transparent_70%)]" />
+          <div className="absolute -bottom-14 -right-14 sm:-bottom-28 sm:-right-28 h-56 w-56 sm:h-[28rem] sm:w-[28rem] rounded-full blur-3xl bg-[radial-gradient(60%_60%_at_50%_50%,hsl(var(--primary)/0.12),transparent_70%)]" />
         </div>
 
         {/* Başlık */}
-        <h2 className="text-center text-2xl md:text-3xl font-semibold tracking-tight leading-snug">
+        <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight leading-snug mb-6 sm:mb-8 lg:mb-10 px-2">
           Müşterilerimiz platformumuzu kullanarak rahatça saç stilini
           seçebiliyorlar
         </h2>
 
         {/* Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {/* 1. Fotoğraf paneli */}
-          <div className="group relative h-64 overflow-hidden rounded-xl ring-1 ring-border/60 bg-black/30 md:h-72 lg:h-80">
+          <div className="group relative h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden rounded-lg sm:rounded-xl ring-1 ring-border/60 bg-black/30">
             <img
               src="index/mutlu_musteri.jpg"
               alt="Berber salonunda saç kesimi"
-              className="h-full w-full object-cover transition-transform duration-700 "
+              className="h-full w-full object-cover transition-transform duration-700"
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background/70 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 sm:h-28 bg-gradient-to-t from-background/70 to-transparent" />
           </div>
 
           {/* 2. Saç stil paneli */}
           <div className="relative group overflow-hidden">
             {/* Main Card */}
-            <div className="flex h-44 items-center rounded-2xl bg-gradient-to-br from-primary/20 via-primary/15 to-transparent p-8 ring-1 ring-primary/20 backdrop-blur-sm md:h-52 transition-all duration-500">
+            <div className="flex h-36 sm:h-44 md:h-52 items-center rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/20 via-primary/15 to-transparent p-4 sm:p-6 lg:p-8 ring-1 ring-primary/20 backdrop-blur-sm transition-all duration-500">
               {/* Animated background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-2xl opacity-0 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-xl sm:rounded-2xl opacity-0 transition-opacity duration-700" />
 
-              {/* Floating particles effect */}
-              <div className="absolute top-4 right-6 w-2 h-2 bg-primary/60 rounded-full animate-pulse" />
-              <div className="absolute top-8 right-12 w-1.5 h-1.5 bg-primary/40 rounded-full animate-pulse delay-300" />
-              <div className="absolute top-12 right-8 w-1 h-1 bg-primary/50 rounded-full animate-pulse delay-700" />
+              {/* Floating particles effect - sadece tablet ve üstünde göster */}
+              <div className="hidden md:block absolute top-4 right-6 w-2 h-2 bg-primary/60 rounded-full animate-pulse" />
+              <div className="hidden md:block absolute top-8 right-12 w-1.5 h-1.5 bg-primary/40 rounded-full animate-pulse delay-300" />
+              <div className="hidden md:block absolute top-12 right-8 w-1 h-1 bg-primary/50 rounded-full animate-pulse delay-700" />
 
               {/* Content */}
               <div className="relative z-10 flex-1">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse" />
-                  <div className="text-sm font-semibold text-white/80 tracking-wide uppercase md:text-base">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                  <div className="w-1 sm:w-1.5 h-1 sm:h-1.5 bg-primary rounded-full animate-pulse" />
+                  <div className="text-xs sm:text-sm md:text-base font-semibold text-white/80 tracking-wide uppercase">
                     En çok seçilen saç stili
                   </div>
                 </div>
 
                 <div className="relative">
-                  <div className="mt-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-3xl font-black text-transparent md:text-4xl tracking-tight">
+                  <div className="mt-1 sm:mt-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-2xl sm:text-3xl md:text-4xl font-black text-transparent tracking-tight">
                     High Fade
                   </div>
 
                   {/* Subtle underline effect */}
-                  <div className="mt-2 h-0.5 w-0 bg-primary rounded-full group-hover:w-20 transition-all duration-700 ease-out" />
+                  <div className="mt-1.5 sm:mt-2 h-0.5 w-0 bg-primary rounded-full group-hover:w-12 sm:group-hover:w-20 transition-all duration-700 ease-out" />
                 </div>
 
                 {/* Stats or additional info */}
-                <div className="mt-4 flex items-center gap-4 text-xs text-white/60">
+                <div className="mt-3 sm:mt-4 flex items-center gap-2 sm:gap-4 text-xs text-white/60">
                   <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-primary/60 rounded-full" />
+                    <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-primary/60 rounded-full" />
                     <span>Popüler</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 bg-primary/80 rounded-full" />
+                    <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-primary/80 rounded-full" />
                     <span>Trend</span>
                   </div>
                 </div>
               </div>
 
-              {/* Side decoration */}
-              <div className="hidden md:flex flex-col items-center justify-center ml-6 opacity-60 transition-opacity duration-500">
-                <div className="text-6xl font-black bg-gradient-to-b from-primary/40 to-primary/20 bg-clip-text text-transparent">
+              {/* Side decoration - sadece desktop'ta göster */}
+              <div className="hidden lg:flex flex-col items-center justify-center ml-6 opacity-60 transition-opacity duration-500">
+                <div className="text-4xl lg:text-6xl font-black bg-gradient-to-b from-primary/40 to-primary/20 bg-clip-text text-transparent">
                   #1
                 </div>
                 <div className="text-xs text-primary/60 mt-1 font-medium">
@@ -176,19 +176,19 @@ function Satisfaction() {
 
           {/* 3. Hemen Randevu Al paneli */}
           <div className="">
-            <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 ring-1 ring-primary/20 transition-all duration-300 hover:ring-primary/40">
+            <div className="group relative overflow-hidden rounded-lg sm:rounded-xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-4 sm:p-6 ring-1 ring-primary/20 transition-all duration-300 hover:ring-primary/40">
               {/* Background decoration */}
-              <div className="absolute -right-4 -top-4 h-20 w-20 rounded-full bg-primary/10 blur-xl transition-all duration-300" />
+              <div className="absolute -right-3 sm:-right-4 -top-3 sm:-top-4 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-primary/10 blur-xl transition-all duration-300" />
 
-              <div className="relative flex h-40 items-center justify-between gap-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-                    <div className="text-lg font-semibold md:text-xl">
+              <div className="relative flex h-32 sm:h-40 items-center justify-between gap-3 sm:gap-6">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
+                    <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary animate-pulse flex-shrink-0" />
+                    <div className="text-base sm:text-lg md:text-xl font-semibold">
                       Hemen Randevu Al
                     </div>
                   </div>
-                  <div className="text-sm text-muted-foreground mb-3">
+                  <div className="text-sm text-muted-foreground mb-2 sm:mb-3">
                     Uygun saatleri şimdi seçin.
                   </div>
                   <div className="text-xs text-primary/70 font-medium">
@@ -196,9 +196,9 @@ function Satisfaction() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end gap-3">
+                <div className="flex flex-col items-end gap-2 sm:gap-3 flex-shrink-0">
                   <Link to="/randevu">
-                    <Button variant="default" size="lg" className="bg-primary">
+                    <Button variant="default" size="sm" className="bg-primary text-xs sm:text-sm px-3 sm:px-4 py-2 sm:py-2.5">
                       Randevu Al
                     </Button>
                   </Link>
@@ -211,11 +211,11 @@ function Satisfaction() {
           </div>
 
           {/* 4. Logo paneli */}
-          <div className="flex flex-col items-center justify-center rounded-xl bg-black/20 p-6 text-center ring-1 ring-border/60 h-[20.8rem] -translate-y-[120px]">
+          <div className="flex flex-col items-center justify-center rounded-lg sm:rounded-xl bg-black/20 p-4 sm:p-6 text-center ring-1 ring-border/60 h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 md:-translate-y-[120px]">
             <img
               src="CentilmenLogo.png"
-              alt="Berber salonunda saç kesimi"
-              className="h-full w-full object-contain"
+              alt="Centilmen Logo"
+              className="h-full w-full object-contain max-w-[200px] sm:max-w-none"
             />
           </div>
         </div>
