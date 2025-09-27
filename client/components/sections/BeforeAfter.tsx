@@ -1,11 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronRight, Sparkles, Star, Users, Award, ArrowRight, Play } from 'lucide-react';
 
-// Mock BeforeAfter component with proper aspect ratio
+// Mock BeforeAfter component with proper aspect ratio and touch support
 const BeforeAfter = ({ beforeSrc, afterSrc, alt }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
+
+  // --- YENİ: Hem fare hem de dokunma olaylarını yönetmek için birleşik fonksiyon ---
+  const handleMove = (clientX) => {
+    if (!isDragging || !containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(percentage);
+  };
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -13,29 +23,49 @@ const BeforeAfter = ({ beforeSrc, afterSrc, alt }) => {
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging || !containerRef.current) return;
-    
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-    setSliderPosition(percentage);
+    handleMove(e.clientX);
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
   };
 
+  // --- YENİ: Dokunmatik olaylar için fonksiyonlar ---
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    e.preventDefault(); // Sayfanın kaymasını engelle
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches[0]) {
+      handleMove(e.touches[0].clientX);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
+    const currentRef = containerRef.current;
     if (isDragging) {
+      // Fare olayları
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+      // Dokunmatik olaylar
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      document.addEventListener('touchend', handleTouchEnd);
     }
     
     return () => {
+      // Fare olaylarını temizle
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      // Dokunmatik olayları temizle
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [isDragging]);
+  }, [isDragging]); // handleMouseMove ve handleTouchMove bağımlılıklardan kaldırıldı
 
   return (
     <div 
@@ -66,13 +96,14 @@ const BeforeAfter = ({ beforeSrc, afterSrc, alt }) => {
       
       {/* Slider line */}
       <div 
-        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10 cursor-ew-resize"
-        style={{ left: `${sliderPosition}%` }}
+        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-10"
+        style={{ left: `${sliderPosition}%`, cursor: 'ew-resize' }}
       >
         {/* Slider handle */}
         <div 
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center cursor-ew-resize hover:scale-110 transition-transform"
           onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart} // YENİ: Dokunma olayını ekle
         >
           <div className="flex gap-1">
             <div className="w-0.5 h-4 bg-gray-400 rounded-full" />
@@ -92,8 +123,8 @@ const BeforeAfter = ({ beforeSrc, afterSrc, alt }) => {
       {/* Premium overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
       
-      {/* Drag instruction */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-black/60 text-white text-xs font-medium rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+      {/* Drag instruction - mobilde her zaman görünür, masaüstünde hover ile */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-black/60 text-white text-xs font-medium rounded-full backdrop-blur-sm lg:opacity-0 group-hover:opacity-100 transition-opacity">
         ← Sürükleyerek karşılaştır →
       </div>
     </div>
@@ -124,13 +155,15 @@ function Gallery() {
   return (
     <section 
       ref={sectionRef}
-      className="relative container mx-auto max-w-7xl px-4 py-20 overflow-hidden "
+      // DEĞİŞİKLİK: Mobil için dikey padding azaltıldı
+      className="relative container mx-auto max-w-7xl px-4 py-16 lg:py-20 overflow-hidden "
     >
       {/* Background decorations */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-primary/10 via-primary/5 to-transparent rounded-full blur-3xl" />
       
-      <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+      {/* DEĞİŞİKLİK: Mobil için gap azaltıldı */}
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         
         {/* Sol taraf - Content */}
         <div className={`space-y-8 ${isVisible ? 'animate-slideInLeft' : 'opacity-0'}`}>
@@ -145,7 +178,8 @@ function Gallery() {
             
             {/* Main title */}
             <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+              {/* DEĞİŞİKLİK: Mobil için başlık boyutu ayarlandı */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
                 Yaptığımız
                 <br />
                 <span className="bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
@@ -155,14 +189,14 @@ function Gallery() {
                 Görün
               </h2>
               
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
                 Bize güvenen misafirlerimizin centilmene gerçek dönüşümlerini keşfedin. Her kesim, bir sanat eseri.
               </p>
             </div>
           </div>
 
           {/* Stats section */}
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6">
             <div className="text-center p-4 rounded-xl bg-gradient-to-b from-card/80 to-card/40 backdrop-blur-sm border border-border/40">
               <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl mx-auto mb-3">
                 <Users className="h-6 w-6 text-primary" />
@@ -192,13 +226,13 @@ function Gallery() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#galeri"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-8 py-4 rounded-2xl font-semibold text-lg hover:from-primary/90 hover:to-primary hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
+              className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-8 py-4 rounded-2xl font-semibold text-lg hover:from-primary/90 hover:to-primary hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
             >
               Galeriyi Görün
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
             
-            <button className="group inline-flex items-center gap-3 border-2 border-primary/20 text-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary/5 hover:border-primary/40 transition-all duration-300">
+            <button className="group inline-flex items-center justify-center gap-3 border-2 border-primary/20 text-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary/5 hover:border-primary/40 transition-all duration-300">
               <Play className="h-5 w-5 group-hover:scale-110 transition-transform" />
               Videoları İzle
             </button>
@@ -226,8 +260,8 @@ function Gallery() {
         {/* Sağ taraf - Before/After Image */}
         <div className={`relative ${isVisible ? 'animate-slideInRight' : 'opacity-0'}`}>
           
-          {/* Premium frame */}
-          <div className="relative p-6 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-sm border border-white/20 shadow-2xl transform scale-90">
+          {/* DEĞİŞİKLİK: Mobil için padding azaltıldı ve scale kaldırıldı */}
+          <div className="relative p-4 lg:p-6 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-sm border border-white/20 shadow-2xl transform lg:scale-90">
             
             {/* Corner decorations */}
             <div className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-primary/60 rounded-tl-lg" />
@@ -241,11 +275,6 @@ function Gallery() {
               afterSrc="index/kesim_sonra.png"
               alt="Centilmen Dönüşümü"
             />
-            
-            {/* Premium badge on image */}
-            <div className="absolute top-10 left-10 px-4 py-2 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-sm font-bold rounded-full shadow-lg backdrop-blur-sm">
-              Önce
-            </div>
           </div>
 
           {/* Floating elements */}
