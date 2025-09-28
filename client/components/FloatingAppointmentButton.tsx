@@ -134,7 +134,7 @@ export function FloatingAppointmentButton({
           opacity: 1,
           width: "180px",
           height: "52px",
-          padding: "12px 20px",
+          padding: "12px 0px 12px 20px",
           borderRadius: "50px",
           minWidth: "180px",
         };
@@ -144,7 +144,7 @@ export function FloatingAppointmentButton({
           opacity: 1,
           width: "180px",
           height: "52px",
-          padding: "12px 20px",
+          padding: "12px 0px 12px 20px",
           borderRadius: "50px",
           minWidth: "180px",
         };
@@ -203,8 +203,8 @@ export function FloatingAppointmentButton({
       <div
         className="bg-white/20 rounded-full transition-all duration-150"
         style={{
-          width: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "32px" : "28px",
-          height: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "32px" : "28px",
+          width: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "40px" : "40px",
+          height: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "40px" : "40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -215,7 +215,7 @@ export function FloatingAppointmentButton({
         }}
       >
         <ArrowRight 
-          className={["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "w-5 h-5" : "w-4 h-4"}
+          className={["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "w-7 h-7" : "w-6 h-6"}
           style={{
             transition: "all 150ms ease-in-out",
           }}
