@@ -155,11 +155,11 @@ function UltimateBarberTeam() {
                     
                     {/* Info Grid */}
                     <div className="space-y-3 mb-4">
-                      <div className="flex justify-between items-center p-2 sm:p-3 bg-gradient-to-br from-gray-900 via-secondary to-gray-900 rounded-lg">
+                      <div className="flex justify-between items-center p-2 sm:p-3 border border-secondary rounded-lg">
                         <span className="text-gray-300 text-sm sm:text-base">Uzmanlık</span>
                         <span className="text-primary font-semibold text-sm sm:text-base">{member.specialty}</span>
                       </div>
-                      <div className="flex justify-between items-center p-2 sm:p-3 bg-gradient-to-br from-gray-900 via-secondary to-gray-900 rounded-lg">
+                      <div className="flex justify-between items-center p-2 sm:p-3 border border-secondary rounded-lg">
                         <span className="text-gray-300 text-sm sm:text-base">Deneyim</span>
                         <span className="text-primary font-semibold text-sm sm:text-base">{member.experience}</span>
                       </div>

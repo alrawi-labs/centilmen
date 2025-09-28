@@ -432,11 +432,11 @@ function Testimonials() {
       </div>
 
       {/* Swipe indicator for mobile */}
-      {isMobile && (
+      {/* {isMobile && (
         <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-black/80 text-white px-3 py-1 rounded-full text-xs animate-bounce">
           ← Kaydırarak gezin →
         </div>
-      )}
+      )} */}
 
       {/* Epic custom animations */}
       <style>{`
