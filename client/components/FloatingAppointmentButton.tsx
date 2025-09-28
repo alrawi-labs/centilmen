@@ -67,11 +67,11 @@ export function FloatingAppointmentButton({
     
   const variantClasses = {
     primary:
-      "bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl",
+      "bg-[#9c6f4f85] backdrop-blur-md border border-white/20 hover:bg-white/15 text-white shadow-lg hover:shadow-xl",
     secondary:
-      "bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-lg hover:shadow-xl",
+      "bg-gray-500/10 backdrop-blur-md border border-gray-500/20 hover:bg-gray-500/15 text-gray-800 shadow-lg hover:shadow-xl",
     success:
-      "bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl",
+      "bg-green-500/10 backdrop-blur-md border border-green-500/20 hover:bg-green-500/15 text-green-700 shadow-lg hover:shadow-xl",
   };
 
   // Animasyon fazlarına göre stiller
@@ -92,11 +92,11 @@ export function FloatingAppointmentButton({
         return {
           transform: `${baseTransform} translateY(0px) scale(1)`,
           opacity: 1,
-          width: "40px",
-          height: "40px",
+          width: "52px",
+          height: "52px",
           padding: "0px",
           borderRadius: "50%",
-          minWidth: "40px",
+          minWidth: "52px",
         };
       case "bounce1":
         return {
@@ -134,7 +134,7 @@ export function FloatingAppointmentButton({
           opacity: 1,
           width: "180px",
           height: "52px",
-          padding: "12px 0px 12px 20px",
+          padding: "12px 5px 12px 20px",
           borderRadius: "50px",
           minWidth: "180px",
         };
@@ -144,7 +144,7 @@ export function FloatingAppointmentButton({
           opacity: 1,
           width: "180px",
           height: "52px",
-          padding: "12px 0px 12px 20px",
+          padding: "12px 5px 12px 20px",
           borderRadius: "50px",
           minWidth: "180px",
         };
@@ -167,7 +167,7 @@ export function FloatingAppointmentButton({
         ...getAnimationStyles(),
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-between",
         gap: animationPhase === "visible" ? "8px" : "0px",
         fontSize: "16px",
         fontWeight: "600",
@@ -201,10 +201,10 @@ export function FloatingAppointmentButton({
       
       {/* Arrow icon */}
       <div
-        className="bg-white/20 rounded-full transition-all duration-150"
+        className="bg-primary backdrop-blur-sm rounded-full transition-all duration-150 border border-white/20"
         style={{
-          width: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "40px" : "40px",
-          height: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "40px" : "40px",
+          width: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "45px" : "40px",
+          height: ["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "45px" : "40px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -218,6 +218,7 @@ export function FloatingAppointmentButton({
           className={["circle", "bounce1", "bounce2", "bounce3"].includes(animationPhase) ? "w-7 h-7" : "w-6 h-6"}
           style={{
             transition: "all 150ms ease-in-out",
+            color: "rgba(255, 255, 255, 0.9)",
           }}
         />
       </div>
