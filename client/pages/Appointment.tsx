@@ -569,48 +569,51 @@ function TimeStep({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-card/20">
-      <div className="container mx-auto max-w-4xl px-4 py-16">
-        <div className="text-center mb-12">
-          <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Clock className="w-8 h-8 text-white" />
+      <div className="container mx-auto max-w-4xl px-4 py-8 md:py-16">
+        {/* Mobilde daha kompakt header */}
+        <div className="text-center mb-8 md:mb-12">
+          <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6">
+            <Clock className="w-6 h-6 md:w-8 md:h-8 text-white" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Saati Seçin</h1>
-          <p className="text-muted-foreground text-lg mb-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4">Saati Seçin</h1>
+          <p className="text-muted-foreground text-sm md:text-lg mb-4 md:mb-6">
             Uygun olan saati seçin
           </p>
-          <div className="inline-flex items-center gap-3 bg-card/60 border border-border/40 rounded-full px-6 py-3 backdrop-blur-sm">
-            <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-              <Scissors className="w-4 h-4 text-primary" />
+          <div className="inline-flex items-center gap-2 md:gap-3 bg-card/60 border border-border/40 rounded-full px-4 md:px-6 py-2 md:py-3 backdrop-blur-sm">
+            <div className="w-6 h-6 md:w-8 md:h-8 bg-primary/10 rounded-full flex items-center justify-center">
+              <Scissors className="w-3 h-3 md:w-4 md:h-4 text-primary" />
             </div>
-            <span className="font-medium">{selectedStylist.name}</span>
+            <span className="font-medium text-sm md:text-base">{selectedStylist.name}</span>
           </div>
         </div>
-        <div className="mb-8">
-          <h3 className="text-lg font-semibold mb-4 text-center">
+
+        <div className="mb-6 md:mb-8">
+          <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4 text-center">
             Tarih Seçin
           </h3>
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex gap-2 md:gap-4 justify-center flex-wrap">
             {dateOptions.map((date) => (
               <Button
                 key={date}
                 variant={selectedDate === date ? "default" : "outline"}
-                className="min-w-[100px] relative"
+                className="min-w-[80px] md:min-w-[100px] relative text-sm md:text-base"
                 onClick={() => setSelectedDate(date)}
               >
                 {date}
-                <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 md:-top-2 -right-1 md:-right-2 bg-primary text-white text-xs rounded-full w-4 h-4 md:w-5 md:h-5 flex items-center justify-center">
                   {AVAILABLE_TIMES_BY_DATE[date]?.length || 0}
                 </span>
               </Button>
             ))}
           </div>
         </div>
+
         <div>
-          <h3 className="text-lg font-semibold mb-6 text-center">
+          <h3 className="text-base md:text-lg font-semibold mb-4 md:mb-6 text-center">
             Müsait Saatler ({selectedDate})
           </h3>
           {availableTimesForDate.length > 0 ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4">
               {availableTimesForDate.map((time) => (
                 <TimeSlot
                   key={time}
@@ -621,11 +624,11 @@ function TimeStep({
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-muted/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-muted-foreground" />
+            <div className="text-center py-8 md:py-12">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-muted/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-6 h-6 md:w-8 md:h-8 text-muted-foreground" />
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-muted-foreground">
+              <h3 className="text-base md:text-lg font-semibold mb-2 text-muted-foreground">
                 Bu tarih için müsait saat yok
               </h3>
               <p className="text-sm text-muted-foreground mb-4">
@@ -634,9 +637,10 @@ function TimeStep({
             </div>
           )}
         </div>
-        <div className="mt-12 text-center">
-          <div className="bg-card/60 border border-border/40 rounded-2xl p-4 backdrop-blur-sm inline-block">
-            <p className="text-sm text-muted-foreground mb-2">
+
+        <div className="mt-8 md:mt-12 text-center">
+          <div className="bg-card/60 border border-border/40 rounded-2xl p-3 md:p-4 backdrop-blur-sm inline-block">
+            <p className="text-xs md:text-sm text-muted-foreground mb-1 md:mb-2">
               📅 Randevu süresi ortalama 45-60 dakikadır
             </p>
             <p className="text-xs text-muted-foreground">
@@ -648,6 +652,7 @@ function TimeStep({
     </div>
   );
 }
+
 
 // TimeSlot (değişiklik yok)
 function TimeSlot({ time, onSelect, isSelected }) {
@@ -751,7 +756,7 @@ function ModelStep({
         </div>
         {!selectedCategory ? (
           // Kategori kartları mobil için tek sütun kalabilir, daha iyi bir akış sağlar
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
             {HAIR_CATEGORIES.map((category) => (
               <CategoryCard
                 key={category.id}

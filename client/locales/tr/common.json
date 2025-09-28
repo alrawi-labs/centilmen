@@ -74,23 +74,23 @@
         "ekibimiz": "Ekibimiz",
         "centil-abi": "Centil abi",
         "deniz": "Deniz",
-        "ucuncu": "Üçüncüyü unuttum"
+        "ucuncu": "Feyzullah"
       }
     },
     "iletisim": {
       "heading": "İletişim",
       "links": {
-        "bize-ulasin": "Bize ulaşın",
-        "randevu-alin": "Randevu alın",
-        "kayit-olun": "kayıt olun",
-        "giris-yapin": "giriş yapın"
+        "bize-ulasin": "Bize Ulaşın",
+        "randevu-alin": "Randevu Alın",
+        "kayit-olun": "Kayıt Olun",
+        "giris-yapin": "Giriş Yapın"
       }
     },
     "kaynaklar": {
       "heading": "Kaynaklar",
       "links": {
         "sss": "Sıkça Sorulan Sorular",
-        "rahatlik-bakim": "Rahatlık ve bakım"
+        "rahatlik-bakim": "Rahatlık ve Bakım"
       }
     }
   },

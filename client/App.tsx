@@ -34,6 +34,9 @@ import HourManagement from "./pages/admin/HourManagement";
 import ProfileManagement from "./pages/admin/ProfileManagement";
 import TeamDetailTemp from "./pages/TeamDetailTemp";
 import Profile from "./pages/Profile";
+import EmailVerification from "./pages/EmailVerification";
+import ForgotPasswordPage from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +64,9 @@ const App = () => (
             <Route path="/kaynaklar" element={<Comfort />} />
             <Route path="/kaynaklar/:slug" element={<Comfort />} />
             <Route path="/profil" element={<Profile />} />
+            <Route path="/eposta-dogrulama" element={<EmailVerification />} />
+            <Route path="/sifremi-unuttum" element={<ForgotPasswordPage />} />
+            <Route path="/sifre-sifirlama" element={<ResetPassword />} />
             <Route
               path="/gizlilik"
               element={<Placeholder title="Gizlilik" />}
